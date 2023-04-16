@@ -1,12 +1,14 @@
-import { Box, useMediaQuery } from "@mui/material";
+import { Box, useMediaQuery, Divider, Typography, useTheme } from "@mui/material";
 import { useSelector } from "react-redux";
 import Navbar from "scenes/navbar/Navbar";
+import FeedWidget from "scenes/widgets/FeedWidget";
 import NewPostWidget from "scenes/widgets/NewPostWidget";
 import UserWidget from "scenes/widgets/UserWidget";
 
 const HomePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
   const { _id, picturePath } = useSelector((state) => state.user);
+  const { palette } = useTheme();
 
   return (
     <Box>
@@ -25,6 +27,11 @@ const HomePage = () => {
         {/* Col 2 */}
         <Box flexBasis={isNonMobileScreens ? "42%" : undefined} mt={isNonMobileScreens ? undefined : "2rem"}>
           <NewPostWidget picturePath={picturePath} />
+          <Divider sx={{ margin: "1.25rem 0" }} />
+          <Typography fontSize="1rem" color={palette.neutral.main} fontWeight="500" mb="1rem">
+            Look at what all my frens are sayin
+          </Typography>
+          <FeedWidget userId={_id} />
         </Box>
         {/* Col 3 */}
         {isNonMobileScreens && (
