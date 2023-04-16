@@ -24,7 +24,7 @@ const LoginPage = () => {
         textAlign="center"
       >
         <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
-          Henlo frens! Welcome to Borker, social media for doggos!
+          Henlo frens! Welcome to Barkbook, social media for doggos!
         </Typography>
         <LoginForm />
       </Box>

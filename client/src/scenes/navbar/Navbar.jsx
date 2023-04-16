@@ -10,8 +10,19 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-import { Search, Message, DarkMode, LightMode, Notifications, Help, Menu, Close } from "@mui/icons-material";
-import PetsIcon from "@mui/icons-material/Pets";
+import {
+  Pets,
+  Search,
+  Message,
+  DarkMode,
+  LightMode,
+  Notifications,
+  Groups,
+  Event,
+  Menu,
+  Close,
+} from "@mui/icons-material";
+//import PetsIcon from "@mui/icons-material/Pets";
 import { useDispatch, useSelector } from "react-redux";
 import { setMode, setLogout } from "features/authSlice";
 import { useNavigate } from "react-router-dom";
@@ -31,8 +42,8 @@ const Navbar = () => {
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
 
-  //const fullName = `${user.firstName} ${user.lastName}`;
-  const fullName = "Test McTestface";
+  const fullName = `${user.firstName} ${user.lastName}`;
+  //const fullName = "Test McTestface";
 
   return (
     <FlexBetween padding="1rem 6%" backgroundColor={alt}>
@@ -49,33 +60,36 @@ const Navbar = () => {
             },
           }}
         >
-          B
-          <PetsIcon />
-          rker
+          Barkb
+          <Pets />
+          <Pets />k
         </Typography>
+
         {isNonMobileScreens && (
-          <FlexBetween backgroundColor={neutralLight} borderRadius="9px" gap="3rem" padding="0.1rem 1.5rem">
-            <InputBase placeholder="Search..." />
-            <IconButton>
-              <Search />
+          <>
+            <FlexBetween backgroundColor={neutralLight} borderRadius="9px" gap="3rem" padding="0.1rem 1.5rem">
+              <InputBase placeholder="Search" />
+              <IconButton>
+                <Search />
+              </IconButton>
+            </FlexBetween>
+            <IconButton onClick={() => dispatch(setMode())}>
+              {theme.palette.mode === "dark" ? (
+                <DarkMode sx={{ fontSize: "25px" }} />
+              ) : (
+                <LightMode sx={{ color: dark, fontSize: "25px" }} />
+              )}
             </IconButton>
-          </FlexBetween>
+          </>
         )}
       </FlexBetween>
 
-      {/* Desktop Nav */}
       {isNonMobileScreens ? (
         <FlexBetween gap="2rem">
-          <IconButton onClick={() => dispatch(setMode())}>
-            {theme.palette.mode === "dark" ? (
-              <DarkMode sx={{ fontSize: "25px" }} />
-            ) : (
-              <LightMode sx={{ color: dark, fontSize: "25px" }} />
-            )}
-          </IconButton>
           <Message sx={{ fontSize: "25px" }} />
+          <Groups sx={{ fontSize: "25px" }} />
+          <Event sx={{ fontSize: "25px" }} />
           <Notifications sx={{ fontSize: "25px" }} />
-          <Help sx={{ fontSize: "25px" }} />
           <FormControl variant="standard" value={fullName}>
             <Select
               value={fullName}
@@ -136,8 +150,9 @@ const Navbar = () => {
               )}
             </IconButton>
             <Message sx={{ fontSize: "25px" }} />
+            <Groups sx={{ fontSize: "25px" }} />
+            <Event sx={{ fontSize: "25px" }} />
             <Notifications sx={{ fontSize: "25px" }} />
-            <Help sx={{ fontSize: "25px" }} />
             <FormControl variant="standard" value={fullName}>
               <Select
                 value={fullName}
