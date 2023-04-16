@@ -16,7 +16,7 @@ const LoginPage = () => {
       </Box>
 
       <Box
-        width={isNonMobileScreens ? "50%" : "93%"}
+        width={isNonMobileScreens ? "35%" : "75%"}
         p="2rem"
         m="2rem auto"
         borderRadius="1.5rem"
