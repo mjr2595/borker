@@ -16,15 +16,15 @@ export const colorTokens = {
     1000: "#000000",
   },
   primary: {
-    50: "#E6FBFF",
-    100: "#CCF7FE",
-    200: "#99EEFD",
-    300: "#66E6FC",
-    400: "#33DDFB",
-    500: "#00D5FA",
-    600: "#00A0BC",
-    700: "#006B7D",
-    800: "#00353F",
+    50: "#E7ECF5",
+    100: "#B8C6E2",
+    200: "#A1B3D8",
+    300: "#89A0CF",
+    400: "#718DC5",
+    500: "#5A7ABC",
+    600: "#4267B2",
+    700: "#3A5A9C",
+    800: "#324D85",
     900: "#001519",
   },
 };
@@ -52,6 +52,8 @@ export const themeSettings = (mode) => {
             background: {
               default: colorTokens.grey[800],
               alt: colorTokens.grey[700],
+              logo: colorTokens.primary[600],
+              nav: colorTokens.grey[700],
             },
           }
         : {
@@ -71,34 +73,36 @@ export const themeSettings = (mode) => {
             background: {
               default: colorTokens.grey[10],
               alt: colorTokens.grey[0],
+              logo: colorTokens.primary[50],
+              nav: colorTokens.primary[600],
             },
           }),
     },
     typography: {
-      fontFamily: ["Rubik", "sans-serif"].join(","),
+      fontFamily: ["Ruda", "sans-serif"].join(","),
       fontSize: 12,
       h1: {
-        fontFamily: ["Rubik", "sans-serif"].join(","),
+        fontFamily: ["Rubrik", "sans-serif"].join(","),
         fontSize: 40,
       },
       h2: {
-        fontFamily: ["Rubik", "sans-serif"].join(","),
+        fontFamily: ["Rubrik", "sans-serif"].join(","),
         fontSize: 32,
       },
       h3: {
-        fontFamily: ["Rubik", "sans-serif"].join(","),
+        fontFamily: ["Rubrik", "sans-serif"].join(","),
         fontSize: 24,
       },
       h4: {
-        fontFamily: ["Rubik", "sans-serif"].join(","),
+        fontFamily: ["Ruda", "sans-serif"].join(","),
         fontSize: 20,
       },
       h5: {
-        fontFamily: ["Rubik", "sans-serif"].join(","),
+        fontFamily: ["Ruda", "sans-serif"].join(","),
         fontSize: 16,
       },
       h6: {
-        fontFamily: ["Rubik", "sans-serif"].join(","),
+        fontFamily: ["Ruda", "sans-serif"].join(","),
         fontSize: 14,
       },
     },

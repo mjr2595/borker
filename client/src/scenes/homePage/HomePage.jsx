@@ -1,7 +1,9 @@
 import { Box, useMediaQuery, Divider, Typography, useTheme } from "@mui/material";
 import { useSelector } from "react-redux";
 import Navbar from "scenes/navbar/Navbar";
+import AdWidget from "scenes/widgets/AdWidget";
 import FeedWidget from "scenes/widgets/FeedWidget";
+import FriendListWidget from "scenes/widgets/FriendListWidget";
 import NewPostWidget from "scenes/widgets/NewPostWidget";
 import UserWidget from "scenes/widgets/UserWidget";
 
@@ -36,7 +38,9 @@ const HomePage = () => {
         {/* Col 3 */}
         {isNonMobileScreens && (
           <Box flexBasis="26%">
+            <AdWidget />
             <Box m="2rem 0" />
+            <FriendListWidget userId={_id} />
           </Box>
         )}
       </Box>

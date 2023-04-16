@@ -40,13 +40,14 @@ const Navbar = () => {
   const dark = theme.palette.neutral.dark;
   const background = theme.palette.background.default;
   const primaryLight = theme.palette.primary.light;
-  const alt = theme.palette.background.alt;
+  const logo = theme.palette.background.logo;
+  const nav = theme.palette.background.nav;
 
   const fullName = `${user.firstName} ${user.lastName}`;
   //const fullName = "Test McTestface";
 
   return (
-    <FlexBetween padding="1rem 6%" backgroundColor={alt}>
+    <FlexBetween padding="1rem 6%" backgroundColor={nav}>
       <FlexBetween gap="1.75rem">
         <Typography
           fontWeight="bold"
@@ -54,11 +55,13 @@ const Navbar = () => {
           color="primary"
           onClick={() => navigate("/home")}
           sx={{
+            color: logo,
             "&:hover": {
-              color: primaryLight,
+              color: neutralLight,
               cursor: "pointer",
             },
           }}
+          variant="h1"
         >
           Barkb
           <Pets />
@@ -75,9 +78,9 @@ const Navbar = () => {
             </FlexBetween>
             <IconButton onClick={() => dispatch(setMode())}>
               {theme.palette.mode === "dark" ? (
-                <DarkMode sx={{ fontSize: "25px" }} />
+                <DarkMode sx={{ color: dark, fontSize: "25px" }} />
               ) : (
-                <LightMode sx={{ color: dark, fontSize: "25px" }} />
+                <LightMode sx={{ color: primaryLight, fontSize: "25px" }} />
               )}
             </IconButton>
           </>
@@ -86,10 +89,21 @@ const Navbar = () => {
 
       {isNonMobileScreens ? (
         <FlexBetween gap="2rem">
-          <Message sx={{ fontSize: "25px" }} />
-          <Groups sx={{ fontSize: "25px" }} />
-          <Event sx={{ fontSize: "25px" }} />
-          <Notifications sx={{ fontSize: "25px" }} />
+          {theme.palette.mode === "dark" ? (
+            <>
+              <Message sx={{ color: dark, fontSize: "25px" }} />
+              <Groups sx={{ color: dark, fontSize: "25px" }} />
+              <Event sx={{ color: dark, fontSize: "25px" }} />
+              <Notifications sx={{ color: dark, fontSize: "25px" }} />
+            </>
+          ) : (
+            <>
+              <Message sx={{ color: primaryLight, fontSize: "25px" }} />
+              <Groups sx={{ color: primaryLight, fontSize: "25px" }} />
+              <Event sx={{ color: primaryLight, fontSize: "25px" }} />
+              <Notifications sx={{ color: primaryLight, fontSize: "25px" }} />
+            </>
+          )}
           <FormControl variant="standard" value={fullName}>
             <Select
               value={fullName}

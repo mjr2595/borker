@@ -8,7 +8,7 @@ const LoginPage = () => {
   return (
     <Box>
       <Box width="100%" backgroundColor={theme.palette.background.alt} p="1rem 6%" textAlign="center">
-        <Typography fontWeight="bold" fontSize="32px" color="primary">
+        <Typography fontWeight="bold" fontSize="32px" color="primary" variant="h1">
           Barkb
           <Pets />
           <Pets />k
