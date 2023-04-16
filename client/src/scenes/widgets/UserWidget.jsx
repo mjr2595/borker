@@ -1,4 +1,4 @@
-import { ManageAccountsOutlined, EditOutlined, LocationOnOutlined } from "@mui/icons-material";
+import { ManageAccountsOutlined, EditOutlined, LocationOnOutlined, Person } from "@mui/icons-material";
 import { Box, Typography, Divider, useTheme } from "@mui/material";
 import FlexBetween from "components/FlexBetween";
 import UserImage from "components/UserImage";
@@ -26,6 +26,7 @@ const UserWidget = ({ userId, picturePath }) => {
     getUser();
   }, []);
 
+  // TODO: Add loading component
   if (!user) {
     return null;
   }
@@ -51,13 +52,59 @@ const UserWidget = ({ userId, picturePath }) => {
             >
               {firstName} {lastName}
             </Typography>
-            <Typography color={palette.neutral.medium}>{friends.length} friends</Typography>
+            <Box display="flex" alignItems="center" gap="0.5rem" mb="0.5rem">
+              <LocationOnOutlined fontSize="small" sx={{ color: palette.neutral.main }} />
+              <Typography color={palette.neutral.medium}>{location}</Typography>
+            </Box>
           </Box>
         </FlexBetween>
         <ManageAccountsOutlined />
       </FlexBetween>
 
       <Divider />
+
+      <Box p="1rem 0">
+        <Box display="flex" alignItems="center" gap="1rem">
+          <Person fontSize="large" sx={{ color: palette.neutral.main }} />
+          <Typography color={palette.neutral.medium}>
+            WOW! You has <b>{friends.length}</b> frens! So good!
+          </Typography>
+        </Box>
+      </Box>
+
+      <Divider />
+
+      <Box p="1rem 0">
+        <Typography fontSize="1rem" color={palette.neutral.main} fontWeight="500" mb="1rem">
+          Other Fun Places to Hang Out with Me!
+        </Typography>
+
+        <FlexBetween gap="1rem" mb="0.5rem">
+          <FlexBetween gap="1rem">
+            <img src="../assets/twitter.png" alt="twitter" />
+            <Box>
+              <Typography color={palette.neutral.main} fontWeight="500">
+                ChirpChirp
+              </Typography>
+              <Typography color={palette.neutral.medium}>birb frens</Typography>
+            </Box>
+          </FlexBetween>
+          <EditOutlined sx={{ color: palette.neutral.main }} />
+        </FlexBetween>
+
+        <FlexBetween gap="1rem">
+          <FlexBetween gap="1rem">
+            <img src="../assets/linkedin.png" alt="linkedin" />
+            <Box>
+              <Typography color={palette.neutral.main} fontWeight="500">
+                ServiceSniffer
+              </Typography>
+              <Typography color={palette.neutral.medium}>dogs with jobs</Typography>
+            </Box>
+          </FlexBetween>
+          <EditOutlined sx={{ color: palette.neutral.main }} />
+        </FlexBetween>
+      </Box>
     </WidgetWrapper>
   );
 };
