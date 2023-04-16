@@ -1,5 +1,5 @@
 import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
-import PetsIcon from "@mui/icons-material/Pets";
+import { Pets } from "@mui/icons-material";
 import LoginForm from "./LoginForm";
 
 const LoginPage = () => {
@@ -9,9 +9,9 @@ const LoginPage = () => {
     <Box>
       <Box width="100%" backgroundColor={theme.palette.background.alt} p="1rem 6%" textAlign="center">
         <Typography fontWeight="bold" fontSize="32px" color="primary">
-          B
-          <PetsIcon />
-          rker
+          Barkb
+          <Pets />
+          <Pets />k
         </Typography>
       </Box>
 

@@ -5,6 +5,7 @@ import UserImage from "components/UserImage";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import WidgetWrapper from "components/WidgetWrapper";
 
 const UserWidget = ({ userId, picturePath }) => {
   const [user, setUser] = useState(null);
@@ -32,7 +33,7 @@ const UserWidget = ({ userId, picturePath }) => {
   const { firstName, lastName, location, friends } = user;
 
   return (
-    <>
+    <WidgetWrapper>
       <FlexBetween gap="0.5rem" pb="1.1rem" onClick={() => navigate(`/profile/${userId}`)}>
         <FlexBetween gap="1rem">
           <UserImage image={picturePath} />
@@ -57,7 +58,7 @@ const UserWidget = ({ userId, picturePath }) => {
       </FlexBetween>
 
       <Divider />
-    </>
+    </WidgetWrapper>
   );
 };
 
