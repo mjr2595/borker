@@ -31,7 +31,6 @@ const PostWidget = ({
   const likeCount = Object.keys(likes).length;
   const { palette } = useTheme();
 
-  // TODO: fix 404 error when liking post
   const patchLike = async () => {
     const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
       method: "PATCH",
@@ -42,7 +41,6 @@ const PostWidget = ({
       body: JSON.stringify({ userId: loggedInUserId }),
     });
     const updatedPost = await response.json();
-    console.log(updatedPost.likes); // TODO: delete once fixed
     dispatch(setPost({ post: updatedPost }));
   };
 
