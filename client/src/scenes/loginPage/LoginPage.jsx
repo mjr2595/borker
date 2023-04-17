@@ -8,7 +8,7 @@ const LoginPage = () => {
   return (
     <Box>
       <Box width="100%" backgroundColor={theme.palette.background.alt} p="1rem 6%" textAlign="center">
-        <Typography fontWeight="bold" fontSize="32px" color="primary" variant="h1">
+        <Typography fontWeight="bold" fontSize="clamp(1rem, 2rem, 2.25rem)" color="primary" variant="h1">
           Barkb
           <Pets />
           <Pets />k
@@ -16,7 +16,7 @@ const LoginPage = () => {
       </Box>
 
       <Box
-        width={isNonMobileScreens ? "35%" : "75%"}
+        width={isNonMobileScreens ? "40%" : "75%"}
         p="2rem"
         m="2rem auto"
         borderRadius="1.5rem"

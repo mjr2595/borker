@@ -42,6 +42,7 @@ const PostWidget = ({
       body: JSON.stringify({ userId: loggedInUserId }),
     });
     const updatedPost = await response.json();
+    console.log(updatedPost.likes); // TODO: delete once fixed
     dispatch(setPost({ post: updatedPost }));
   };
 
