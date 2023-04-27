@@ -4,7 +4,7 @@ Social media. But, like, for dogs.
 
 ## About
 
-This is my final project for the Nucamp Nucamp Full Stack Web + Mobile Development Honors program.
+This is my final project for the Nucamp Nucamp Full Stack Web + Mobile Development Honors program. Check out a demo [here!](https://www.youtube.com/watch?v=cskBOrNxFP4)
 
 Light mode:
 ![screenshot of app in light mode](./client/public/assets/barkbook-light.png "screenshot of app in light mode")
